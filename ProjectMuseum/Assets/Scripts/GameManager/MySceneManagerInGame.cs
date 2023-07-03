@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class MySceneManagerInGame : MonoBehaviour
 {
-    [field: SerializeField] public RoomInstantiator[] RoomInstanciators { get; set; } = new RoomInstantiator[3];
+    #region RoomGeneration
 
+    [field: SerializeField] public RoomInstantiator[] RoomInstanciators { get; set; } = new RoomInstantiator[3];
     [field: SerializeField] public List<GameObject> RoomsL { get; set; }
     [field: SerializeField] public List<GameObject> RoomsM { get; set; }
     [field: SerializeField] public List<GameObject> RoomsR { get; set; }
-
     public int Floor { get; set; } = 0;
+
+    #endregion
+
 
 
     private void Awake()

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject PlayerObject { get { return playerObject; } }
     [SerializeField] private GameObject playerObject;
 
+    //[field: SerializeField] public GameObject PlayerOJ { get; set; }
+
     public GameObject LobbySpawn { get { return lobbySpawn; } }
     [SerializeField] private GameObject lobbySpawn;
 
@@ -35,20 +37,4 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TeleportToSpawn(int x, int y, int z)
-    {
-        // Teleport Function
-    }
-
-    public void ToggleRobotFollow(bool follow)
-    {
-        // ToggleRobotFollow Function
-        RobotFollow = follow;
-    }
-    
-    // Functions for loading scenes
-    //private void GameOver()
-    //{
-    //    SceneManager.LoadScene("GameOverScene");
-    //}
 }
