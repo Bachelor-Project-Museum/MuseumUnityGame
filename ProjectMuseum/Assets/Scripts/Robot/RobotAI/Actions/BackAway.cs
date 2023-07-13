@@ -20,7 +20,7 @@ public class BackAway : Node
     public override NodeState Evaluate()
     {
         Debug.Log("Evaluate() in BackAway node");
-        Transform target = (Transform)GetData("player");
+        Transform target = (Transform)GetData((string)GameManager.Instance.PlayerObject.name);
 
         // Check if enough time has passed since the last call
         if (Time.time - _lastCalled < _cooldown)

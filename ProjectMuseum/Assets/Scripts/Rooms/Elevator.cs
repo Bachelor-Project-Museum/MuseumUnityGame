@@ -10,7 +10,7 @@ public class Elevator : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.Instance)
+        if (GameManager.Instance != null)
         {
             Debug.Log(GameManager.Instance.SMinGame.RoomInstanciators.Length);
 

@@ -12,7 +12,7 @@ namespace BehaviorTree
 
         protected void Start()
         {
-            _playerObject = GameObject.FindGameObjectWithTag("Player");
+            _playerObject = GameManager.Instance.PlayerObject;
             StartBehaviorTree();
         }
 
@@ -20,7 +20,7 @@ namespace BehaviorTree
         {
             if (_root != null)
             {
-                _root.SetData("player", _playerObject.transform);
+                _root.SetData((string)GameManager.Instance.PlayerObject.name, _playerObject.transform);
                 _root.Evaluate();
             }
         }
