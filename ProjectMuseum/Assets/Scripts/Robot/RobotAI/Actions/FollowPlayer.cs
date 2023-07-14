@@ -18,7 +18,7 @@ public class FollowPlayer : Node
     public override NodeState Evaluate()
     {
         Debug.Log("Evaluate() in FollowPlayer node");
-        Transform target = (Transform)GetData("player");
+        Transform target = (Transform)GetData((string)GameManager.Instance.PlayerObject.name);
 
         if (Vector3.Distance(_agent.transform.position, target.position) > 0.01f)
         {

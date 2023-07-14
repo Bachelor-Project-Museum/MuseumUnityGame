@@ -69,7 +69,7 @@ public class RobotBT : BehaviorTree.Tree
         base.Update();
 
         // Update player data on each tick
-        _root.SetData("player", _gameManager.PlayerObject.transform);
+        _root.SetData((string)GameManager.Instance.PlayerObject.name , _gameManager.PlayerObject.transform);
 
         // Check if shouldFollow value has changed in the GameManager during runtime
         if (_followCondition != null && _followCondition.IsConditionMet() != _gameManager.RobotFollow)

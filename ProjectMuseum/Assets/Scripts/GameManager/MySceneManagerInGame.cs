@@ -14,11 +14,4 @@ public class MySceneManagerInGame : MonoBehaviour
 
     #endregion
 
-
-
-    private void Awake()
-    {
-        if (GameManager.Instance) GameManager.Instance.SMinGame = this;
-    }
-
 }

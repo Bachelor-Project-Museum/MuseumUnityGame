@@ -7,14 +7,13 @@ public class GameManager : MonoBehaviour
 {
     // Variables for GameManager
 
-    public MySceneManagerInGame SMinGame { get; set; }
+    [field: SerializeField] public MySceneManagerInGame SMinGame { get; set; }
 
 
 
 
     // _______________________________________________________
-    public GameObject PlayerObject { get { return playerObject; } }
-    [SerializeField] private GameObject playerObject;
+    [field: SerializeField] public GameObject PlayerObject { get; set; }
 
     //[field: SerializeField] public GameObject PlayerOJ { get; set; }
 

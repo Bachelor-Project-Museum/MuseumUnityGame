@@ -28,6 +28,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void LateUpdate()
+    {
+        Look();
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -102,17 +113,6 @@ public class PlayerController : MonoBehaviour
         lookRotation += (-look.y * sensitivity);
         lookRotation = Mathf.Clamp(lookRotation, -45, 45);
         camHolder.transform.eulerAngles = new Vector3(lookRotation, camHolder.transform.eulerAngles.y, camHolder.transform.eulerAngles.z);
-    }
-
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    void LateUpdate()
-    {
-        Look();
     }
 
     public void SetGrounded(bool state)
