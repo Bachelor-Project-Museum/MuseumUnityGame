@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     // _______________________________________________________
     [field: SerializeField] public GameObject PlayerObject { get; set; }
 
+    [field: SerializeField] public GameObject RoboterObject { get; set; }
+
     //[field: SerializeField] public GameObject PlayerOJ { get; set; }
 
     public GameObject LobbySpawn { get { return lobbySpawn; } }

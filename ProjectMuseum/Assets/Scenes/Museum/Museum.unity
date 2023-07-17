@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5e49b5f3c33deaf4d84f9dfd273cb42a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: bd77fb2b2b48c4e48a608c4666e3ca0f, type: 2}
 --- !u!1 &259965579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1295,7 @@ GameObject:
   - component: {fileID: 1364749614}
   - component: {fileID: 1364749618}
   - component: {fileID: 1364749617}
+  - component: {fileID: 1364749619}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Robot
@@ -1310,7 +1311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364749612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.97, z: 5.92}
+  m_LocalPosition: {x: 0, y: 1, z: 5.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1420,6 +1421,20 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1364749619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364749612}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afce6ec85fe6d34baa7e1f6e76199cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopDistance: 5
+  backAwayDistance: 3
 --- !u!1 &1456173377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +1680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SMinGame>k__BackingField: {fileID: 2045954077}
   <PlayerObject>k__BackingField: {fileID: 8552772159995910777}
+  <RoboterObject>k__BackingField: {fileID: 1364749612}
   lobbySpawn: {fileID: 408798289}
   RobotFollow: 1
 --- !u!4 &2045954075
@@ -1769,7 +1785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8552772159995910777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8260098, y: 1.99, z: -2.8383715}
+  m_LocalPosition: {x: -1.8260098, y: 1, z: -2.8383715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

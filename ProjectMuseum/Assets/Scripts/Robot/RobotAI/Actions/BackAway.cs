@@ -29,7 +29,8 @@ public class BackAway : Node
         }
 
         Vector3 directionToTarget = _agent.transform.position - target.position;
-        Vector3 newPosition = _agent.transform.position + directionToTarget.normalized * _backAwayDistance;
+        //Vector3 newPosition = _agent.transform.position + directionToTarget.normalized * _backAwayDistance; normalized?????????????????
+        Vector3 newPosition = _agent.transform.position + directionToTarget * _backAwayDistance;
 
         NavMeshHit navMeshHit;
 
