@@ -7,11 +7,10 @@ public class RobotInteractionController : MonoBehaviour
     [SerializeField] GameObject followPlayerText;
     [SerializeField] GameObject teleportPlayerText;
 
-    [SerializeField, Range(2, 10)] private float maxDistance = 4f
-
-    private readonly 
+    [SerializeField, Range(2, 10)] private float maxDistance = 4f;
 
     private bool _infoIsActive = false;
+    private RobotAI _currentRobotAI;
 
     // Start is called before the first frame update
     void Start()
@@ -35,25 +34,24 @@ public class RobotInteractionController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             // Check if the hit object has the "Robot" tag
-            if (hit.collider.CompareTag())
+            if (hit.collider.CompareTag("Robot"))
             {
                 // The player is looking at a robot within the maximum distance
                 // Now we can enable the interaction UI for the robot.
                 EnableInteractionUI(true);
 
-                RobotAI robotAI = hit.collider.GetComponent<RobotAI>();
+                _currentRobotAI = hit.collider.GetComponent<RobotAI>();
 
-                
                 // ToggleFollow player 
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKeyDown(KeyCode.F) && _currentRobotAI != null)
                 {
-
+                    _currentRobotAI.ToggleFollowPlayer();
                 } 
 
                 // Teleport
                 if (Input.GetKeyDown(KeyCode.T))
                 {
-
+                    _currentRobotAI.TeleportPlayer();
                 }
             }
             else

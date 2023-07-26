@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408798289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9830515, y: -3.8936195, z: 13.073364}
+  m_LocalPosition: {x: 6.47, y: -4.631, z: 5.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1013,15 +1013,15 @@ RectTransform:
   m_GameObject: {fileID: 541181852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 68927270}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2, y: 31}
+  m_AnchoredPosition: {x: 2, y: 91}
   m_SizeDelta: {x: 506.92224, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541181854
@@ -1901,7 +1901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionText: {fileID: 541181852}
   assetInfoPanel: {fileID: 1186708505}
-  maxDistance: 4
 --- !u!114 &1249387841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopDistance: 5
   backAwayDistance: 3
+  lobbySpawn: {fileID: 408798289}
 --- !u!1 &1443847571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,16 +2658,16 @@ RectTransform:
   m_GameObject: {fileID: 1652542391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 68927270}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -7, y: 70}
-  m_SizeDelta: {x: 506.92224, y: 50}
+  m_AnchoredPosition: {x: -7, y: 69.5}
+  m_SizeDelta: {x: 506.92224, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1841839610
 GameObject:
@@ -3056,7 +3056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "F" to toggle the robots follw behavior
+  m_text: Press "F" to toggle the robots follow behavior
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3119,7 +3119,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -208.81964, w: 0}
+  m_margin: {x: 0, y: 0, z: -232.88678, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3142,16 +3142,16 @@ RectTransform:
   m_GameObject: {fileID: 1945722084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 68927270}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -113, y: 116}
-  m_SizeDelta: {x: 506.92224, y: 50}
+  m_AnchoredPosition: {x: -52.300003, y: 45.3}
+  m_SizeDelta: {x: 506.92224, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2045954073
 GameObject:
