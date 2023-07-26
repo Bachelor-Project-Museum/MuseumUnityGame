@@ -94,4 +94,13 @@ public class RobotAI : MonoBehaviour
         }
     }
 
+    public void TeleportPlayer()
+    {
+
+    }
+
+    public void ToggleFollowPlayer()
+    {
+
+    }
 }
