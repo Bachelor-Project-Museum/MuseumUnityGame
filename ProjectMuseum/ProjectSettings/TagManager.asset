@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Robot
+<<<<<<< Updated upstream
+=======
+  - Interactable
+  - Button
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
