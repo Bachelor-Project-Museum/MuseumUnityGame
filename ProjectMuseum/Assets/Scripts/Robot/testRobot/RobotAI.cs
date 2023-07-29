@@ -34,7 +34,7 @@ public class RobotAI : MonoBehaviour
         if (_gameManager.RobotFollow)
         {
             float distance = Vector3.Distance(transform.position, player.position);
-            Debug.Log("Distance: " + distance);
+            //Debug.Log("Distance: " + distance);
 
             if (distance > backAwayDistance && distance < stopDistance)
             {
