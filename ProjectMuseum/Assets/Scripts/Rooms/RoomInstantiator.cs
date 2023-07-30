@@ -26,28 +26,32 @@ public class RoomInstantiator : MonoBehaviour
         {
             case RoomPosIndex.RoomsL:
                 if (GameManager.Instance.SMinGame.Floor <= GameManager.Instance.SMinGame.RoomsL.Count)
-                    room = GameManager.Instance.SMinGame.RoomsL[GameManager.Instance.SMinGame.Floor];
+                    Instantiate(GameManager.Instance.SMinGame.RoomsL[GameManager.Instance.SMinGame.Floor], gameObject.transform);
                 break;
 
             case RoomPosIndex.RoomsM:
                 if (GameManager.Instance.SMinGame.Floor <= GameManager.Instance.SMinGame.RoomsM.Count)
-                    room = GameManager.Instance.SMinGame.RoomsM[GameManager.Instance.SMinGame.Floor];
+                    Instantiate(GameManager.Instance.SMinGame.RoomsM[GameManager.Instance.SMinGame.Floor], gameObject.transform);
                 break;
 
             case RoomPosIndex.RoomsR:
                 if (GameManager.Instance.SMinGame.Floor <= GameManager.Instance.SMinGame.RoomsR.Count)
-                    room = GameManager.Instance.SMinGame.RoomsR[GameManager.Instance.SMinGame.Floor];
+                    Instantiate(GameManager.Instance.SMinGame.RoomsR[GameManager.Instance.SMinGame.Floor], gameObject.transform);
                 break;
 
             default:
                 break;
         }
-
-        Instantiate(room, gameObject.transform);
     }
 
     public void DestroyRoom()
     {
-        Destroy(room);
+        if (transform.childCount > 0)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(gameObject.transform.GetChild(i).gameObject);
+            }
+        }
     }
 }
