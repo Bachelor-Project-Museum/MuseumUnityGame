@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TabletCanvas : MonoBehaviour
 {
+    readonly int one = 1;
     private enum Direction
     {
         Up,
@@ -30,11 +31,16 @@ public class TabletCanvas : MonoBehaviour
         {
             if (GameManager.Instance.SMinGame)
             {
-                GameManager.Instance.SMinGame.Floor++;
-                foreach (var instatiaor in GameManager.Instance.SMinGame.RoomInstanciators)
+                if (GameManager.Instance.SMinGame.RoomsL.Count - one > GameManager.Instance.SMinGame.Floor &&
+                    GameManager.Instance.SMinGame.RoomsM.Count - one > GameManager.Instance.SMinGame.Floor &&
+                    GameManager.Instance.SMinGame.RoomsR.Count - one > GameManager.Instance.SMinGame.Floor)
                 {
-                    instatiaor.DestroyRoom();
-                    instatiaor.InstantiateRoom();
+                    GameManager.Instance.SMinGame.Floor += 1;
+                    foreach (var instatiaor in GameManager.Instance.SMinGame.RoomInstanciators)
+                    {
+                        instatiaor.DestroyRoom();
+                        instatiaor.InstantiateRoom();
+                    }
                 }
             }
         }
@@ -46,11 +52,14 @@ public class TabletCanvas : MonoBehaviour
         {
             if (GameManager.Instance.SMinGame)
             {
-                if (GameManager.Instance.SMinGame.Floor > 0) GameManager.Instance.SMinGame.Floor--;
-                foreach (var instatiaor in GameManager.Instance.SMinGame.RoomInstanciators)
+                if (GameManager.Instance.SMinGame.Floor > 0)
                 {
-                    instatiaor.DestroyRoom();
-                    instatiaor.InstantiateRoom();
+                    GameManager.Instance.SMinGame.Floor -= 1;
+                    foreach (var instatiaor in GameManager.Instance.SMinGame.RoomInstanciators)
+                    {
+                        instatiaor.DestroyRoom();
+                        instatiaor.InstantiateRoom();
+                    }
                 }
             }
         }
