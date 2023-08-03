@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe5b70f1746080a419e5ef1005d61859, type: 3}
-  m_Name: ExampleAsset
+  m_Name: GreenCube
   m_EditorClassIdentifier: 
-  Creator: 
-  AssetName: 
-  InfoText: 
+  Creator: Davis
+  AssetName: GreenCube
+  InfoText: This Cube is Green
