@@ -83,13 +83,13 @@ public class RobotAI : MonoBehaviour
 
     public void TeleportPlayer()
     {
-        Debug.Log("Teleport");
+        //Debug.Log("Teleport");
         GameManager.Instance.PlayerObject.transform.position = lobbySpawn.transform.position;
     }
 
     public void ToggleFollowPlayer()
     {
-        Debug.Log("Follow");
+        //Debug.Log("Follow");
         _gameManager.RobotFollow = !_gameManager.RobotFollow; // Toggle the value in the GameManager
     }
 }

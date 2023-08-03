@@ -6,8 +6,6 @@ public class RoomInstantiator : MonoBehaviour
 {
     [SerializeField] RoomPosIndex roomPos;
 
-    GameObject room = null;
-
     public enum RoomPosIndex
     {
         RoomsL,
@@ -15,13 +13,11 @@ public class RoomInstantiator : MonoBehaviour
         RoomsR
     }
 
-
-
+    // Function to instantiate a room based on the selected positions
     public void InstantiateRoom()
     {
-        Debug.Log(roomPos);
-
-
+        //Debug.Log(roomPos);
+        
         switch (roomPos)
         {
             case RoomPosIndex.RoomsL:
@@ -44,6 +40,7 @@ public class RoomInstantiator : MonoBehaviour
         }
     }
 
+    // Function to destroy all child objects
     public void DestroyRoom()
     {
         if (transform.childCount > 0)

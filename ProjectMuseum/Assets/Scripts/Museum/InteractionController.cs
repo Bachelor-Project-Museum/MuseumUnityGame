@@ -15,13 +15,10 @@ public class InteractionController : MonoBehaviour
     private bool _infoIsActive = false;
 
 
-
     #region Robot
 
     [SerializeField] GameObject followPlayerText;
     [SerializeField] GameObject teleportPlayerText;
-
-    [SerializeField, Range(2, 10)] private float maxDistance = 4f;
 
     private RobotAI _currentRobotAI;
     private bool willDisableUIatEndOfFrame = false;
@@ -36,12 +33,12 @@ public class InteractionController : MonoBehaviour
 
     void Start()
     {
-        //Interactables
+        // Initialize UI elements
         interactionText.SetActive(false);
         assetInfoPanel.SetActive(false);
         _infoIsActive = false;
 
-        //Robot
+        // Robot
         followPlayerText.SetActive(false);
         teleportPlayerText.SetActive(false);
     }
@@ -54,11 +51,13 @@ public class InteractionController : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
+        // Cast a ray to detect interactions with objects
         if (Physics.Raycast(ray, out hit, 4f))
         {
-            //On Raycasthit
+            // On Raycasthit, check for UI elements to be displayed
             CheckForInfoWindow();
 
+            // Determine the type of objects hit and handle accordingly
             RaycastHits tag = default;
             if (System.Enum.TryParse(hit.collider.gameObject.tag, out tag))
             {
@@ -99,12 +98,13 @@ public class InteractionController : MonoBehaviour
 
     private void CheckForInfoWindow()
     {
-        //Checks if window is active
+        // Checks if window is active
         if (_infoIsActive) interactionText.SetActive(false);
         else interactionText.SetActive(true);
         
     }
 
+    #region UI enable/disable
     private void EnableDisplayField()
     {
         _infoIsActive = true;
@@ -124,6 +124,9 @@ public class InteractionController : MonoBehaviour
         teleportPlayerText.SetActive(enable);
     }
 
+    #endregion
+
+    // Function for raycastHit with interactable object
     private void OnRaycasthitInteractable(RaycastHit rayHit)
     {
                 //Abfrage ob Interaction Button gedrückt wird
@@ -140,6 +143,7 @@ public class InteractionController : MonoBehaviour
                 }
     }
 
+    // Function for raycastHit with robot to interact with
     private void OnRaycasthitRobot(RaycastHit rayHit)
     {
         // The player is looking at a robot within the maximum distance
@@ -161,12 +165,13 @@ public class InteractionController : MonoBehaviour
         }
     }
 
+    // Function for raycastHit with buttons
     private void OnRaycasthitButton(RaycastHit rayHit)
     {
-        Debug.Log("Ray Button");
+        //Debug.Log("Ray Button");
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Got Button OnClick");
+            //Debug.Log("Got Button OnClick");
             rayHit.transform.gameObject.GetComponent<TabletCanvas>().ActivateElevator();
         }
     }

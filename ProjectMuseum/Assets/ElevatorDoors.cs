@@ -14,20 +14,14 @@ public class ElevatorDoors : MonoBehaviour
         gameObject.transform.position = openPos.position;
     }
 
-    void Update()
-    {
-        
-    }
-
     public void StartOpenDoor()
     {
         coroutine = StartCoroutine(OpenDoor());
     }
 
+    // Enumerator to open elevator doors
     IEnumerator OpenDoor()
     {
-        float timer = 0;
-
         while(Vector3.Distance(gameObject.transform.position, openPos.position) > 0.1f)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, openPos.position, speed * Time.deltaTime);
@@ -42,10 +36,9 @@ public class ElevatorDoors : MonoBehaviour
         coroutine = StartCoroutine(CloseDoor());
     }
 
+    // Enumerator to close elevator doors
     IEnumerator CloseDoor()
     {
-        float timer = 0;
-
         while (Vector3.Distance(gameObject.transform.position, closePos.position) > 0.01f)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, closePos.position, speed * Time.deltaTime);

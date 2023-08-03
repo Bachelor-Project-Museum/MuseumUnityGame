@@ -22,13 +22,14 @@ public class TabletCanvas : MonoBehaviour
     {
         if (direction == Direction.Up)
         {
-            Debug.Log("up");
+            //Debug.Log("up");
             OnButtonUp();
         }
         else OnButtonDown();
-        Debug.Log($"Floor: {GameManager.Instance.SMinGame.Floor}");
+        //Debug.Log($"Floor: {GameManager.Instance.SMinGame.Floor}");
     }
 
+    // Function to move up a floor
     void OnButtonUp()
     {
         if (GameManager.Instance)
@@ -51,6 +52,7 @@ public class TabletCanvas : MonoBehaviour
         }
     }
 
+    // Function to move down a floor
     void OnButtonDown()
     {
         if (GameManager.Instance)
@@ -71,20 +73,25 @@ public class TabletCanvas : MonoBehaviour
         }
     }
 
+    // Enumerator to control the doors behavior
     IEnumerator ControlDoors()
     {
         float time = 0;
+
+        // Closing doors
         foreach (var door in doors)
         {
             door.StartCloseDoor();
         }
 
+        // Cooldown until they can open again
         while (time < elevatorTime)
         {
             time += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
+        // Opening doors
         foreach (var door in doors)
         {
             door.StartOpenDoor();
