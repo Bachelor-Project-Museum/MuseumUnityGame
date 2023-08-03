@@ -17,7 +17,7 @@ public class AssetController : MonoBehaviour
     public void SetText()
     {
         _creator.text = $"Creator: {_assetData.Creator}";
-        _assetName.text = $"Assetname: {_assetData.AssetName}";
-        _assetInfo.text = $"Infotext: {_assetData.InfoText}";
+        _assetName.text = $"Asset: {_assetData.AssetName}";
+        _assetInfo.text = $"Info: {_assetData.InfoText}";
     }
 }
