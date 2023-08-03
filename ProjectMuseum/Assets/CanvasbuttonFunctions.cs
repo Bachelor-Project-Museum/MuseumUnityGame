@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CanvasbuttonFunctions : MonoBehaviour
 {
     [SerializeField] GameObject settingsCanva = null;
+    [SerializeField] GameObject creditsCanva = null;
     AsyncOperation operation;
     readonly string sceneName = "Museum";
 
@@ -26,6 +27,6 @@ public class CanvasbuttonFunctions : MonoBehaviour
 
     public void OnOpenCredits()
     {
-
+        creditsCanva.SetActive(true);
     }
 }
