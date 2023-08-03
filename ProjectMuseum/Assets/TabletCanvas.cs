@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class TabletCanvas : MonoBehaviour
 {
+    [SerializeField] ElevatorDoors[] doors = new ElevatorDoors[2];
+    [SerializeField] float elevatorTime = 4;
     readonly int one = 1;
+    Coroutine coroutine = null;
+
     private enum Direction
     {
         Up,
@@ -31,6 +35,7 @@ public class TabletCanvas : MonoBehaviour
         {
             if (GameManager.Instance.SMinGame)
             {
+                coroutine = StartCoroutine(ControlDoors());
                 if (GameManager.Instance.SMinGame.RoomsL.Count - one > GameManager.Instance.SMinGame.Floor &&
                     GameManager.Instance.SMinGame.RoomsM.Count - one > GameManager.Instance.SMinGame.Floor &&
                     GameManager.Instance.SMinGame.RoomsR.Count - one > GameManager.Instance.SMinGame.Floor)
@@ -52,6 +57,7 @@ public class TabletCanvas : MonoBehaviour
         {
             if (GameManager.Instance.SMinGame)
             {
+                coroutine = StartCoroutine(ControlDoors());
                 if (GameManager.Instance.SMinGame.Floor > 0)
                 {
                     GameManager.Instance.SMinGame.Floor -= 1;
@@ -63,5 +69,26 @@ public class TabletCanvas : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator ControlDoors()
+    {
+        float time = 0;
+        foreach (var door in doors)
+        {
+            door.StartCloseDoor();
+        }
+
+        while (time < elevatorTime)
+        {
+            time += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        foreach (var door in doors)
+        {
+            door.StartOpenDoor();
+        }
+        StopCoroutine(coroutine);
     }
 }
