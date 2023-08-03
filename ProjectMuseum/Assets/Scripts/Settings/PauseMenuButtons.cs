@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenuButtons : MonoBehaviour
@@ -15,6 +16,9 @@ public class PauseMenuButtons : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioClip buttonClickSound;
+
+    AsyncOperation operation;
+    readonly string sceneName = "MainMenu";
 
     private void Start()
     {
@@ -34,7 +38,7 @@ public class PauseMenuButtons : MonoBehaviour
     }
     public void QuitGame()
     {
-        Application.Quit();
+        operation = SceneManager.LoadSceneAsync(sceneName);
     }
 
     public void PlaySound()
