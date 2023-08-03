@@ -66,7 +66,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Menu"",
                     ""type"": ""Button"",
-                    ""id"": ""f3967e4a-c3d8-4557-ad80-453202cbb320"",
+                    ""id"": ""f2008af8-aaa4-4e97-8cd1-dfa82185ced1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -164,7 +164,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""893f4424-0e62-4cb8-80f7-6cb65a367b8a"",
+                    ""id"": ""930edda5-4ed0-42ce-8ed9-ea1247feee16"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",

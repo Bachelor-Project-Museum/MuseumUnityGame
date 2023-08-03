@@ -37,7 +37,6 @@ public class InteractionController : MonoBehaviour
     void Start()
     {
         //Interactables
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         interactionText.SetActive(false);
         assetInfoPanel.SetActive(false);
         _infoIsActive = false;
