@@ -17,6 +17,10 @@ public class SelectionWheel : MonoBehaviour
     [SerializeField] RectTransform ownRectTrans = null;
 
 
+    private void Start()
+    {
+        ownRectTrans.rotation = Quaternion.Euler(ownRectTrans.rotation.x, ownRectTrans.rotation.y, rotationZ);
+    }
     public void StartRotation(bool willRotateClockwise)
     {
         if (!isRotating) rotationCoroutine = StartCoroutine(RotationCoroutine(willRotateClockwise));
