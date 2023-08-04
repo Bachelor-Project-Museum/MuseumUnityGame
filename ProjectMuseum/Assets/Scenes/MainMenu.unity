@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99e78efe1382884782a4b0a8f3f21cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
   wheelScript: {fileID: 444597439}
 --- !u!1 &1176849301
 GameObject:
@@ -2768,7 +2768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99e78efe1382884782a4b0a8f3f21cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 0
+  direction: 1
   wheelScript: {fileID: 444597439}
 --- !u!114 &1605608216
 MonoBehaviour:
