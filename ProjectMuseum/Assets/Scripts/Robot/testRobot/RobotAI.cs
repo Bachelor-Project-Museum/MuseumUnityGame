@@ -4,8 +4,9 @@ using UnityEngine.AI;
 public class RobotAI : MonoBehaviour
 {
     private Transform player;
-    [SerializeField] private float stopDistance = 5f; // The distance at which the robot will stop following the player
-    [SerializeField] private float backAwayDistance = 3f; // The distance at which the robot will start backing away from the player
+    [SerializeField] public bool followPlayer { get; set; } = true;
+    [SerializeField, Range(5, 20)] private float stopDistance = 5f; // The distance at which the robot will stop following the player
+    [SerializeField, Range(1, 4.99f)] private float backAwayDistance = 3f; // The distance at which the robot will start backing away from the player
     [SerializeField] private GameObject lobbySpawn;
 
     private NavMeshAgent agent;
@@ -43,7 +44,7 @@ public class RobotAI : MonoBehaviour
             }
             else if (distance <= backAwayDistance)
             {
-                Vector3 awayDirection = (transform.position - player.position).normalized;
+                Vector3 awayDirection = (transform.position - player.position);
                 Vector3 backAwayPosition = transform.position + awayDirection * backAwayDistance;
 
                 // Sample a valid position on the NavMesh for back away

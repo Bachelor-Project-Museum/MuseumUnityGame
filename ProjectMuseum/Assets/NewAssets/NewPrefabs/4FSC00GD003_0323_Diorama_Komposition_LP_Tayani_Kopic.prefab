@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5227122752243964390}
   - component: {fileID: 7266437268559935262}
   - component: {fileID: 7555470098308888663}
+  - component: {fileID: 8793354918040164786}
   m_Layer: 0
   m_Name: "K\xF6rper__LP"
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8793354918040164786
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23017804811911778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2757037908362343381, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &651254043485515839
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +109,7 @@ GameObject:
   - component: {fileID: 4958554736311732470}
   - component: {fileID: 115655144891042513}
   - component: {fileID: 4643629293609954648}
+  - component: {fileID: 8954825673701631697}
   m_Layer: 0
   m_Name: Fass_LP001
   m_TagString: Untagged
@@ -166,6 +182,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8954825673701631697
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651254043485515839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7978409708441548595, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &651706423102651049
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +207,7 @@ GameObject:
   - component: {fileID: 54452250677686374}
   - component: {fileID: 2646705768931440907}
   - component: {fileID: 638280440686016843}
+  - component: {fileID: 5868387980647634618}
   m_Layer: 0
   m_Name: Basis_LP
   m_TagString: Untagged
@@ -249,6 +280,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5868387980647634618
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651706423102651049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1574545188218337736, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &984057269403921272
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +305,7 @@ GameObject:
   - component: {fileID: 3432893327312782752}
   - component: {fileID: 7808875670172889373}
   - component: {fileID: 5348593947036033011}
+  - component: {fileID: 2093619667349114152}
   m_Layer: 0
   m_Name: Laterne_LP
   m_TagString: Untagged
@@ -332,6 +378,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2093619667349114152
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984057269403921272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6397707147876918656, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &4462477005280760831
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +403,7 @@ GameObject:
   - component: {fileID: 1283040540057206313}
   - component: {fileID: 1806099980763104776}
   - component: {fileID: 5385257883869573323}
+  - component: {fileID: 72122817231230202}
   m_Layer: 0
   m_Name: Baum_LP
   m_TagString: Untagged
@@ -415,6 +476,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &72122817231230202
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462477005280760831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5814061094843279108, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &4650858206831923467
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +501,7 @@ GameObject:
   - component: {fileID: 3220191582834214817}
   - component: {fileID: 862570490119726826}
   - component: {fileID: 3278521603769138036}
+  - component: {fileID: 3420585704201675285}
   m_Layer: 0
   m_Name: Fass_LP002
   m_TagString: Untagged
@@ -498,6 +574,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3420585704201675285
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650858206831923467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6387454361015723548, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &4860063674401819460
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +599,7 @@ GameObject:
   - component: {fileID: 3626188708277829336}
   - component: {fileID: 8698155868213602856}
   - component: {fileID: 1969281682861201339}
+  - component: {fileID: 4592121307767707863}
   m_Layer: 0
   m_Name: Kleidung_LP
   m_TagString: Untagged
@@ -581,6 +672,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4592121307767707863
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4860063674401819460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7379229675038508224, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &5651961856340227886
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +791,7 @@ GameObject:
   - component: {fileID: 4040324843292214743}
   - component: {fileID: 7108502672526997477}
   - component: {fileID: 5735948740466985006}
+  - component: {fileID: 8928327238392570515}
   m_Layer: 0
   m_Name: Boot_LP
   m_TagString: Untagged
@@ -758,6 +864,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8928327238392570515
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670406682139447428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2289070181733545370, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &7574642192312156918
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +889,7 @@ GameObject:
   - component: {fileID: 9140587580960795026}
   - component: {fileID: 3182821632432226146}
   - component: {fileID: 1492301470667150758}
+  - component: {fileID: 9032726228897578993}
   m_Layer: 0
   m_Name: Fass_LP003
   m_TagString: Untagged
@@ -841,6 +962,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9032726228897578993
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7574642192312156918}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 41045618527819870, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &7611187359578718609
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +987,7 @@ GameObject:
   - component: {fileID: 3127987389020062036}
   - component: {fileID: 5669336673676258126}
   - component: {fileID: 6550878649903754404}
+  - component: {fileID: 1116984601637904792}
   m_Layer: 0
   m_Name: Laternenstab_LP
   m_TagString: Untagged
@@ -924,6 +1060,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1116984601637904792
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611187359578718609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 810634870556944056, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
 --- !u!1 &7702034105211917351
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +1128,7 @@ GameObject:
   - component: {fileID: 7462411244354300462}
   - component: {fileID: 3755400552349617570}
   - component: {fileID: 101462705458396661}
+  - component: {fileID: 2449649335374032084}
   m_Layer: 0
   m_Name: Baum_LP002
   m_TagString: Untagged
@@ -1050,3 +1201,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2449649335374032084
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451423696225990702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1029508029879366158, guid: a2cd8384a4317964c9a8141f24c59fc0, type: 3}
