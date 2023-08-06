@@ -28,7 +28,9 @@ public class ElevatorDoors : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        StopCoroutine(coroutine);
+        GameManager.Instance.ElevatorDoorMoving = false;
+
+        if (coroutine != null) StopCoroutine(coroutine);
     }
 
     public void StartCloseDoor()
@@ -45,6 +47,8 @@ public class ElevatorDoors : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        StopCoroutine(coroutine);
+        GameManager.Instance.ElevatorDoorMoving = false;
+
+        if (coroutine != null) StopCoroutine(coroutine);
     }
 }

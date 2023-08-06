@@ -1,10 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
 
 public class RobotAI : MonoBehaviour
 {
     private Transform player;
     [SerializeField] public bool followPlayer { get; set; } = true;
+    [SerializeField, Range(1, 20)] public float speed = 2f;
     [SerializeField, Range(5, 20)] private float stopDistance = 5f; // The distance at which the robot will stop following the player
     [SerializeField, Range(1, 4.99f)] private float backAwayDistance = 3f; // The distance at which the robot will start backing away from the player
     [SerializeField] private GameObject lobbySpawn;
@@ -21,6 +24,7 @@ public class RobotAI : MonoBehaviour
         player = GameManager.Instance.PlayerObject.transform;
 
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
         originalPosition = transform.position;
     }
 
@@ -92,5 +96,30 @@ public class RobotAI : MonoBehaviour
     {
         //Debug.Log("Follow");
         _gameManager.RobotFollow = !_gameManager.RobotFollow; // Toggle the value in the GameManager
+    }
+
+
+    public void RebakeNavMesh()
+    {
+        transform.position = lobbySpawn.transform.position;
+
+        //NavMeshBuildSettings buildSettings = new NavMeshBuildSettings();
+        //buildSettings.agentRadius = agent.radius;
+        //buildSettings.agentHeight = agent.height;
+        //buildSettings.agentSlope = agent.baseOffset;
+        //buildSettings.agentTypeID = agent.agentTypeID;
+
+        //// Get all the colliders in the scene to be included in the NavMesh
+        //List<NavMeshBuildSource> sources = new List<NavMeshBuildSource>();
+        //NavMeshBuilder.CollectSources(null, ~0, NavMeshCollectGeometry.PhysicsColliders, 0, new List<NavMeshBuildMarkup>(), sources);
+
+        //// Clear the existing NavMesh
+        //NavMesh.RemoveAllNavMeshData();
+
+        //// Build the NavMesh using the specified build settings and sources
+        //NavMeshData data = NavMeshBuilder.BuildNavMeshData(buildSettings, sources, new Bounds(Vector3.zero, new Vector3(1000f, 1000f, 1000f)), Vector3.zero, Quaternion.identity);
+
+        //// Apply the new NavMesh data to the scene
+        //NavMesh.AddNavMeshData(data);
     }
 }

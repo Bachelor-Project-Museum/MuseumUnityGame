@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TabletCanvas : MonoBehaviour
 {
+    public RobotAI robotAI;
     [SerializeField] ElevatorDoors[] doors = new ElevatorDoors[2];
     [SerializeField] float elevatorTime = 4;
     readonly int one = 1;
@@ -20,11 +21,11 @@ public class TabletCanvas : MonoBehaviour
 
     public void ActivateElevator()
     {
-        if (direction == Direction.Up)
-        {
-            //Debug.Log("up");
-            OnButtonUp();
-        }
+        if (GameManager.Instance.ElevatorDoorMoving) return;
+
+        GameManager.Instance.ElevatorDoorMoving = true;
+
+        if (direction == Direction.Up) OnButtonUp();
         else OnButtonDown();
         //Debug.Log($"Floor: {GameManager.Instance.SMinGame.Floor}");
     }
@@ -47,6 +48,9 @@ public class TabletCanvas : MonoBehaviour
                         instatiaor.DestroyRoom();
                         instatiaor.InstantiateRoom();
                     }
+
+                    // Rebake navmesh
+                    robotAI.RebakeNavMesh();
                 }
             }
         }
@@ -69,6 +73,9 @@ public class TabletCanvas : MonoBehaviour
                         instatiaor.InstantiateRoom();
                     }
                 }
+
+                // Rebake navmesh
+                robotAI.RebakeNavMesh();
             }
         }
     }
