@@ -21,6 +21,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] GameObject teleportPlayerText;
 
     private RobotAI _currentRobotAI;
+    private RobotBT _currentRobotBT;
     private bool willDisableUIatEndOfFrame = false;
 
     #endregion
@@ -151,18 +152,39 @@ public class InteractionController : MonoBehaviour
         EnableInteractionUI(true);
 
         _currentRobotAI = rayHit.collider.GetComponent<RobotAI>();
+        _currentRobotBT = rayHit.collider.GetComponent<RobotBT>();
 
-        // ToggleFollow player 
-        if (Input.GetKeyDown(KeyCode.F) && _currentRobotAI != null)
-        {
-            _currentRobotAI.ToggleFollowPlayer();
-        }
 
-        // Teleport
-        if (Input.GetKeyDown(KeyCode.T))
+        if (_currentRobotAI != null && _currentRobotAI.enabled)
         {
-            _currentRobotAI.TeleportPlayer();
+            // ToggleFollow player 
+            if (Input.GetKeyDown(KeyCode.F) && _currentRobotAI != null)
+            {
+                _currentRobotAI.ToggleFollowPlayer();
+            }
+
+            // Teleport
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                _currentRobotAI.TeleportPlayer();
+            }
+        } 
+        else
+        {
+            // ToggleFollow player 
+            if (Input.GetKeyDown(KeyCode.F) && _currentRobotAI != null)
+            {
+                _currentRobotBT.ToggleFollowPlayer();
+            }
+
+            // Teleport
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                _currentRobotBT.TeleportPlayer();
+            }
         }
+         //= rayHit.collider.GetComponent<RobotBT>();
+
     }
 
     // Function for raycastHit with buttons

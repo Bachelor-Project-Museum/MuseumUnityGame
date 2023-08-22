@@ -6,16 +6,14 @@ using UnityEngine.AI;
 public class RobotAI : MonoBehaviour
 {
     private Transform player;
-    [SerializeField] public bool followPlayer { get; set; } = true;
     [SerializeField, Range(1, 20)] public float speed = 2f;
     [SerializeField, Range(5, 20)] private float stopDistance = 5f; // The distance at which the robot will stop following the player
     [SerializeField, Range(1, 4.99f)] private float backAwayDistance = 3f; // The distance at which the robot will start backing away from the player
-    [SerializeField] private GameObject lobbySpawn;
-
+    [SerializeField] public bool followPlayer { get => followPlayer1; set => followPlayer1 = value; }
     private NavMeshAgent agent;
-    private Vector3 originalPosition; // The original position of the robot (to move to when RobotFollow is set to false)
 
     private GameManager _gameManager; // Reference to the GameManager script
+    private bool followPlayer1 = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +23,6 @@ public class RobotAI : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-        originalPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -81,7 +78,7 @@ public class RobotAI : MonoBehaviour
             // If RobotFollow is false, return to the original position
             agent.updateRotation = true;
             agent.isStopped = false;
-            agent.SetDestination(lobbySpawn.transform.position);
+            agent.SetDestination(_gameManager.LobbySpawn.transform.position);
             return;
         }
     }
@@ -89,7 +86,7 @@ public class RobotAI : MonoBehaviour
     public void TeleportPlayer()
     {
         //Debug.Log("Teleport");
-        GameManager.Instance.PlayerObject.transform.position = lobbySpawn.transform.position;
+        GameManager.Instance.PlayerObject.transform.position = _gameManager.LobbySpawn.transform.position;
     }
 
     public void ToggleFollowPlayer()
@@ -101,7 +98,7 @@ public class RobotAI : MonoBehaviour
 
     public void RebakeNavMesh()
     {
-        transform.position = lobbySpawn.transform.position;
+        transform.position = _gameManager.LobbySpawn.transform.position;
 
         //NavMeshBuildSettings buildSettings = new NavMeshBuildSettings();
         //buildSettings.agentRadius = agent.radius;

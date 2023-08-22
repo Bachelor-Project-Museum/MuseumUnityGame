@@ -16,7 +16,8 @@ public class ReturnToLobby : Node
     public override NodeState Evaluate()
     {
         Debug.Log("Setting destination to LobbySpawn in ReturnToLobby node");
-        _agent.SetDestination(_lobbySpawn.position);
+        _agent.isStopped = false;
+        _agent.SetDestination(_lobbySpawn.transform.position);
         state = NodeState.RUNNING;
         return state;
     }

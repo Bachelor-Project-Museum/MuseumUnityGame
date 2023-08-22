@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject LobbySpawn { get { return lobbySpawn; } }
     [SerializeField] private GameObject lobbySpawn;
 
-    public bool RobotFollow { get; set; }  = true;
+    [SerializeField] public bool RobotFollow { get; set; }  = true;
 
     public bool ElevatorDoorMoving { get; set; } = false;
 

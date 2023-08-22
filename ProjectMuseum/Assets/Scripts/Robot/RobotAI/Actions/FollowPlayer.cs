@@ -1,37 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using BehaviorTree;
 using UnityEngine.AI;
+using UnityEngine;
 
 public class FollowPlayer : Node
 {
-    private NavMeshAgent _agent;
-    private float _speed;
+    private readonly Transform _agentTransform;
+    private readonly Transform _playerTransform;
+    private readonly NavMeshAgent _navMeshAgent;
+    private readonly float _followDistance;
 
-    public FollowPlayer(NavMeshAgent agent, float speed)
+    public FollowPlayer(Transform agentTransform, Transform playerTransform, NavMeshAgent navMeshAgent, float followDistance)
     {
-        _agent = agent;
-        _speed = speed;
+        _agentTransform = agentTransform;
+        _playerTransform = playerTransform;
+        _navMeshAgent = navMeshAgent;
+        _followDistance = followDistance;
     }
 
     public override NodeState Evaluate()
     {
         Debug.Log("Evaluate() in FollowPlayer node");
-        Transform target = (Transform)GetData((string)GameManager.Instance.PlayerObject.name);
-
-        if (Vector3.Distance(_agent.transform.position, target.position) > 0.01f)
+        try
         {
-            _agent.speed = _speed;
-            _agent.SetDestination(target.position);
-            state = NodeState.RUNNING;
-        }
-        else
-        {
-            _agent.speed = 0f;
-            state = NodeState.SUCCESS;
-        }
+            // Set the destination to a point behind the player
+            Vector3 targetPosition = _playerTransform.position - (_playerTransform.forward * _followDistance);
+            _navMeshAgent.isStopped = false;
+            _navMeshAgent.SetDestination(targetPosition);
 
-        return state;
+            return NodeState.SUCCESS;
+        }
+        catch (System.Exception)
+        {
+            // Stop the NavMeshAgent from moving
+            _navMeshAgent.isStopped = true;
+            return NodeState.FAILURE;
+        }
     }
 }

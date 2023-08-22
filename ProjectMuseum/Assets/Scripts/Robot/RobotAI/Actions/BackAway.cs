@@ -6,15 +6,11 @@ public class BackAway : Node
 {
     private NavMeshAgent _agent;
     private float _backAwayDistance;
-    private float _cooldown;
-    private float _lastCalled;
 
-    public BackAway(NavMeshAgent agent, float backAwayDistance, float cooldown)
+    public BackAway(NavMeshAgent agent, float backAwayDistance)
     {
         _agent = agent;
         _backAwayDistance = backAwayDistance;
-        _cooldown = cooldown;
-        _lastCalled = -cooldown;
     }
 
     public override NodeState Evaluate()
@@ -22,11 +18,6 @@ public class BackAway : Node
         Debug.Log("Evaluate() in BackAway node");
         Transform target = (Transform)GetData((string)GameManager.Instance.PlayerObject.name);
 
-        // Check if enough time has passed since the last call
-        if (Time.time - _lastCalled < _cooldown)
-        {
-            return state;
-        }
 
         Vector3 directionToTarget = _agent.transform.position - target.position;
         //Vector3 newPosition = _agent.transform.position + directionToTarget.normalized * _backAwayDistance; normalized?????????????????
@@ -37,9 +28,9 @@ public class BackAway : Node
         if (NavMesh.SamplePosition(newPosition, out navMeshHit, 2.0f, NavMesh.AllAreas))
         {
             Debug.Log("Setting new destination in BackAway node");
+            _agent.isStopped = false;
             _agent.SetDestination(navMeshHit.position);
             state = NodeState.RUNNING;
-            _lastCalled = Time.time;
         }
         else
         {
